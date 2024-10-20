@@ -19,8 +19,8 @@ export const fetchNowPlayingMovies = async () => {
 export const fetchTopRatedMovies = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/movie/top_rated`, {
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
+      params: {
+        api_key: `${API_KEY}`,
       },
     });
     return response.data;

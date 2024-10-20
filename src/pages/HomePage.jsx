@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchNowPlayingMovies, fetchTopRatedMovies } from "../client";
-import DetailMoview from "./DetailMovie";
+import DetailMoview from "./DetailMovie/DetailMovie";
+import "./DetailMovie/style.css";
 
 const HomePage = () => {
   const [nowPlaying, setNowPlaying] = useState([]);
@@ -19,13 +20,13 @@ const HomePage = () => {
   return (
     <div>
       <h1>Now Playing</h1>
-      <div className="movie-grid">
+      <div className="flex flex-row text-red-400">
         {nowPlaying.map((movie) => (
           <DetailMoview key={movie.id} movie={movie} />
         ))}
       </div>
       <h1>Top Rated</h1>
-      <div className="movie-grid">
+      <div className="flex">
         {topRated.map((movie) => (
           <DetailMoview key={movie.id} movie={movie} />
         ))}
