@@ -28,3 +28,16 @@ export const fetchTopRatedMovies = async () => {
     console.error("Error fetching top rated movies:", error);
   }
 };
+
+export const getMovieById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${id}`, {
+      params: {
+        api_key: `${API_KEY}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching detail movies:", error);
+  }
+};

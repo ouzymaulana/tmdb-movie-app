@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        blue: "#1e1b4b",
+      },
+      backgroundImage: {
+        bioskop: "url('./src/assets/bioskop.svg')",
+      },
+    },
   },
   plugins: [],
 };
