@@ -40,15 +40,7 @@ const Carousel = ({ data }) => {
       <div className="swiper centered-slide-carousel swiper-container relative">
         <div className="swiper-wrapper">
           {data.map((item, i) => (
-            <div
-              key={i}
-              className="swiper-slide rounded-2xl overflow-hidden"
-              // style={{
-              //   backgroundImage: `url(https://image.tmdb.org/t/p/w500/${item.poster_path})`,
-              //   // backgroundSize: "cover",
-              //   // backgroundPosition: "center",
-              // }}
-            >
+            <div key={i} className="swiper-slide rounded-2xl overflow-hidden">
               <Link to={`/movie/${item.id}`} className="relative group">
                 <div className="rounded-2xl overflow-hidden h-96 flex justify-center items-center relative">
                   <img
@@ -66,7 +58,7 @@ const Carousel = ({ data }) => {
             </div>
           ))}
         </div>
-        <div className="swiper-pagination "></div>
+        <div className="swiper-pagination"></div>
       </div>
     </div>
   );

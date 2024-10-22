@@ -41,3 +41,49 @@ export const getMovieById = async (id) => {
     console.error("Error fetching detail movies:", error);
   }
 };
+
+export const loginConfiguration = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/authentication/token/new`, {
+      params: {
+        api_key: API_KEY,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching detail movies:", error);
+  }
+};
+
+export const sessionConfiguration = async (requestToken) => {
+  try {
+    const response = await axios.post(
+      `${BASE_URL}/authentication/session/new`,
+      {
+        request_token: requestToken,
+      },
+      {
+        params: {
+          api_key: API_KEY,
+        },
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching detail movies:", error);
+  }
+};
+
+export const searchMovies = async (query) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/search/movie`, {
+      params: {
+        api_key: API_KEY,
+        query: query,
+      },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Error searching movies:", error);
+  }
+};

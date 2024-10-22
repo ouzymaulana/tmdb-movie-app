@@ -17,10 +17,6 @@ const DetailMoview = () => {
     handleGetDetailMovie();
   }, []);
 
-  useEffect(() => {
-    console.log("detail : ", detail);
-  }, [detail]);
-
   return (
     <div
       className="h-screen flex py-40 px-64"
