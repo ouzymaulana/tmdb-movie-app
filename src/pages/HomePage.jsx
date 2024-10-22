@@ -20,19 +20,14 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="px-28 py-20 max-sm:py-2 max-sm:px-2">
       <div>
+        <h1 className="text-white text-xl py-5">Top Rated</h1>
         <Carousel data={topRated} />
       </div>
-      <h1>Now Playing</h1>
-      <div className="flex flex-wrap items-center justify-center gap-20 xl:gap-8 max-sm:gap-6 font-conforter">
+      <h1 className="text-white text-xl py-5">Now Playing</h1>
+      <div className="flex flex-wrap items-center md:justify-between max-sm:justify-center gap-3 xl:gap-8 font-conforter">
         {nowPlaying.map((movie) => (
-          <CardItem key={movie.id} movie={movie} />
-        ))}
-      </div>
-      <h1>Top Rated</h1>
-      <div className="flex">
-        {topRated.map((movie) => (
           <CardItem key={movie.id} movie={movie} />
         ))}
       </div>

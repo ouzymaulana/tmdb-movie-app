@@ -5,8 +5,8 @@ import "./style.css";
 const CardItem = ({ movie }) => {
   return (
     <div
-      className="w-80 overflow-hidden shadow-lg bg-white rounded-xl"
-      style={{ height: "420px" }}
+      // style={{ height: "420px" }}
+      className="w-80 max-sm:w-56 max-sm:h-80 md:has-[420px]: overflow-hidden shadow-lg bg-white rounded-xl"
     >
       <Link to={`/movie/${movie.id}`} className="relative group">
         <img
